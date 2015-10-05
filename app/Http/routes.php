@@ -11,6 +11,26 @@
 |
 */
 
-$app->get('/', ['as' => 'agenda.index' , 'uses' => 'IndexController@index']);
-$app->get('/{letra}', ['as' => 'agenda.letra' , 'uses' => 'IndexController@index']);
+$app->get('/', [
+    'as' => 'agenda.index' ,
+    'uses' => 'AgendaController@index']);
 
+$app->get('/{letra}', [
+    'as' => 'agenda.letra' ,
+    'uses' => 'AgendaController@index']);
+
+$app->post('/busca', [
+    'as' => 'agenda.busca',
+    'uses' => 'AgendaController@busca'
+    //dd('busca')
+]);
+
+$app->get('/contato/{id}/apagar', [
+    'as' => 'pessoa.destroy',
+    'uses' => 'PessoaController@destroy'
+]);
+
+$app->get('/telefone/{id}/apagar', [
+   'as' => 'telefone.destroy',
+    'uses' => 'TelefoneController@destroy'
+]);
