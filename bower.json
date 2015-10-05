@@ -1,0 +1,21 @@
+{
+  "name": "Code Agenda",
+  "version": "0.01",
+  "authors": [
+    "Andre <andresk82003@hotail.com>"
+  ],
+  "description": "Agenda de Telefone",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "fontawesome#~4.4.0"
+  }
+}
