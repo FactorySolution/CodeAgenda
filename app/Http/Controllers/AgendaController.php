@@ -16,32 +16,21 @@ class AgendaController extends Controller
 {
     public function index($letra = "A"){
         $pessoas = Pessoa::where('apelido', 'like', $letra.'%')->get();
-        $letras = $this->getLetras();
-        return view('agenda', compact('pessoas', 'letras'));
+        return view('agenda', compact('pessoas'));
     }
 
     public function busca(Request $request)
     {
-        /*$busca = $request->busca;
+        $busca = $request->busca;
         $pessoas = [];
-        if (!empty($busca)){
+        if (!empty($busca)) {
             $pessoas = Pessoa::where('nome', 'like', "%{$busca}%")
                 ->orWhere('apelido', 'like', "%{$busca}%")
                 ->get();
         }
-        $letras = $this->getLetras();
-        return view('agenda', compact('pessoas', 'letras'));*/
-        dd($request->busca);
+        return view('agenda', compact('pessoas'));
+
     }
 
-    protected function getLetras()
-    {
-        $letras = [];
-        foreach(Pessoa::all() as $pessoa){
-            $letras[] = strtoupper(substr($pessoa->apelido, 0, 1));
-        }
-        sort($letras);
 
-        return array_unique($letras);
-    }
 }

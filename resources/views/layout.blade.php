@@ -8,7 +8,7 @@
     <title>Code Agenda</title>
 
     <!-- Bootstrap -->
-    <link href="css/app.css" rel="stylesheet">
+    <link href="{{ url('css/app.css') }}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,11 +25,11 @@
                 Code.Education <br />
                 <small> <a href="{{ route('agenda.index') }}"></a> <i class="glyphicon glyphicon-phone-alt"></i> Agenda Telefônica </small>
                 <span class="pull-right">
-                    <form class="form-inline" action="{{ route('agenda.busca') }}}" method="post">
+                    <form class="form-inline" action="{{ route('agenda.busca') }}" method="post">
                         <div class="input-group">
                             <input type="text" name="busca" class="form-control" placeholder="Pesquisar Contato...">
                                 <span class="input-group-btn">
-                                 <button class="btn btn-default" type="submit">
+                                 <button class="btn btn-primary" type="submit">
                                      <i class="fa fa-search"></i>
                                  </button>
                                 </span>
@@ -48,7 +48,7 @@
     </div>
     <div class="row">
         <div class="col-lg-12 btn-row">
-            <a href="#" class="btn btn-primary">Novo Contato</a>
+            <a href="{{ route('pessoa.create') }}" class="btn btn-primary">Novo Contato</a>
         </div>
     </div>
     <div class="row">
@@ -58,6 +58,6 @@
 
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/scripts.js"></script>
+<script src="{{ url('js/scripts.js') }}"></script>
 </body>
 </html>

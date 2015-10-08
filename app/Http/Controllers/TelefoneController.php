@@ -19,4 +19,12 @@ class TelefoneController extends Controller
 
         return redirect()->route('agenda.index');
     }
+
+    public function delete($id)
+    {
+        $telefone = Telefone::find($id);
+        $pessoa = $telefone->pessoa;
+        return view('telefone.delete', compact('pessoa','telefone'));
+    }
+
 }
